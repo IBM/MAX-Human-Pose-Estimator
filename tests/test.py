@@ -23,7 +23,7 @@ def test_metadata():
     assert r.status_code == 200
 
     metadata = r.json()
-    assert metadata['id'] == 'openpose-tensorflow'
+    assert metadata['id'] == 'human-pose-estimator-tensorflow'
     assert metadata['name'] == 'Openpose TensorFlow Model'
     assert metadata['description'] == 'Openpose TensorFlow model trained on COCO data to detect human poses'
     assert metadata['license'] == 'Apache License 2.0'

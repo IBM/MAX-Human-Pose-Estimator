@@ -20,7 +20,7 @@ MODEL_META_DATA = {
     'id': '{}'.format(MODEL_NAME.lower()),
     'name': 'Openpose TensorFlow Model',
     'description': 'Openpose TensorFlow model trained on COCO data to detect human poses',
-    'type': 'Human pose detection',
+    'type': 'Human pose estimation',
     'license': '{}'.format(MODEL_LICENSE)
 }
 
