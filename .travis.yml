@@ -1,0 +1,13 @@
+language: python
+python:
+  - 3.6
+services:
+  - docker
+install:
+  - docker build -t max-human-pose-estimator .
+  - docker run -it -d -p 5000:5000 max-human-pose-estimator
+  - sleep 30
+before_script:
+  - pip install pytest requests
+script:
+  - pytest tests/test.py
