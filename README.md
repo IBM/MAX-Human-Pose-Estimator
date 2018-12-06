@@ -84,7 +84,7 @@ The model will be available internally at port `5000`, but can also be accessed 
 Clone this repository locally. In a terminal, run the following command:
 
 ```
-$ git clone https://github.ibm.com/ibm/MAX-Human-Pose-Estimator.git
+$ git clone https://github.com/IBM/MAX-Human-Pose-Estimator.git
 ```
 
 Change directory into the repository base folder:
