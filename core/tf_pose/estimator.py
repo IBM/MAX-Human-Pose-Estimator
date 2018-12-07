@@ -405,6 +405,7 @@ class TfPoseEstimator:
         results = []
         for human in humans:
             pose_lines = []
+            body_parts = []
             # draw point
             for i in range(common.CocoPart.Background.value):
                 if i not in human.body_parts.keys():
@@ -413,6 +414,11 @@ class TfPoseEstimator:
                 body_part = human.body_parts[i]
                 center = [int(body_part.x * image_w + 0.5), int(body_part.y * image_h + 0.5)]
                 centers[i] = center
+                body_parts.append({"part_id": body_part.part_idx,
+                                   "part_name": common.CocoPart(i).name,
+                                   "score": body_part.score,
+                                   "x": center[0],
+                                   "y": center[1]})
 
             # draw line
             for pair_order, pair in enumerate(common.CocoPairsRender):
@@ -422,7 +428,7 @@ class TfPoseEstimator:
                 line = centers[pair[0]] + centers[pair[1]]
                 pose_lines.append({"line": line})
 
-            results.append({"human_id": len(results), "pose_lines": pose_lines})
+            results.append({"human_id": len(results), "pose_lines": pose_lines, "body_parts": body_parts})
         return results
 
     def _get_scaled_img(self, npimg, scale):

@@ -47,6 +47,7 @@ def test_predict():
     assert len(response['predictions']) == 3
     assert response['predictions'][0]['human_id'] == 0
     assert len(response['predictions'][0]['pose_lines']) > 0
+    assert len(response['predictions'][0]['body_parts']) > 0
 
     # Test by the image without faces
     img2_path = 'assets/IBM.jpeg'

@@ -24,13 +24,21 @@ class Model(Resource):
 
 
 # Creating a JSON response model: https://flask-restplus.readthedocs.io/en/stable/marshalling.html#the-api-model-factory
+body_parts_prediction = api.model('body_parts_prediction', {
+    "part_id": fields.Integer(required=True),
+    "part_name": fields.String(required=True),
+    "score": fields.Fixed(required=True),
+    "x": fields.Integer(required=True),
+    "y": fields.Integer(required=True)
+})
 line_prediction = api.model('LinePrediction', {
     'line': fields.List(fields.Integer(required=True, description='Connection line for the detected joins in the format '
                                                                 '[x1, y1, x2, y2]'))
 })
 label_prediction = api.model('LabelPrediction', {
     'human_id': fields.Integer(required=True),
-    'pose_lines': fields.List(fields.Nested(line_prediction), description='Detected pose lines for a person')
+    'pose_lines': fields.List(fields.Nested(line_prediction), description='Detected pose lines for a person'),
+    "body_parts": fields.List(fields.Nested(body_parts_prediction), description='Detected body parts for a person')
 })
 predict_response = api.model('ModelPredictResponse', {
     'status': fields.String(required=True, description='Response status message'),
