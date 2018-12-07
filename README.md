@@ -64,7 +64,7 @@ You can also deploy the model on Kubernetes using the latest docker image on Doc
 On your Kubernetes cluster, run the following commands:
 
 ```
-$ kubectl apply -f https://github.ibm.com/CODAIT/MAX-Human-Pose-Estimator/raw/master/max-human-pose-estimator.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/IBM/MAX-Human-Pose-Estimator/master/max-human-pose-estimator.yaml
 ```
 
 The model will be available internally at port `5000`, but can also be accessed externally through the `NodePort`.
