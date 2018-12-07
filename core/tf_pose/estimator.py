@@ -415,7 +415,7 @@ class TfPoseEstimator:
                 center = [int(body_part.x * image_w + 0.5), int(body_part.y * image_h + 0.5)]
                 centers[i] = center
                 body_parts.append({"part_id": body_part.part_idx,
-                                   "part_name": common.CocoPart(i).name,
+                                   "part_name": body_part.get_part_name().name,
                                    "score": body_part.score,
                                    "x": center[0],
                                    "y": center[1]})
