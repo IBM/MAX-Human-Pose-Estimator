@@ -40,8 +40,8 @@ predict_response = api.model('ModelPredictResponse', {
 # Set up parser for input data (http://flask-restplus.readthedocs.io/en/stable/parsing.html)
 input_parser = api.parser()
 # Example parser for file input
-input_parser.add_argument('file', type=FileStorage, location='files', required=True)
-
+input_parser.add_argument('file', type=FileStorage, location='files', required=True,
+                          help='An image encoded as JPEG, PNG, or TIFF')
 
 @api.route('/predict')
 class Predict(Resource):

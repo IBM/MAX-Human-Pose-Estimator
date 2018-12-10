@@ -64,7 +64,7 @@ You can also deploy the model on Kubernetes using the latest docker image on Doc
 On your Kubernetes cluster, run the following commands:
 
 ```
-$ kubectl apply -f https://github.ibm.com/CODAIT/MAX-Human-Pose-Estimator/raw/master/max-human-pose-estimator.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/IBM/MAX-Human-Pose-Estimator/master/max-human-pose-estimator.yaml
 ```
 
 The model will be available internally at port `5000`, but can also be accessed externally through the `NodePort`.
@@ -84,7 +84,7 @@ The model will be available internally at port `5000`, but can also be accessed 
 Clone this repository locally. In a terminal, run the following command:
 
 ```
-$ git clone https://github.ibm.com/ibm/MAX-Human-Pose-Estimator.git
+$ git clone https://github.com/IBM/MAX-Human-Pose-Estimator.git
 ```
 
 Change directory into the repository base folder:
@@ -167,7 +167,7 @@ You should see a JSON response like that below:
 
 ### 4. Run the Notebook
 
-Once the model server is running, you can see how to use it by walking through [the demo notebook](demo.ipynb). _Note_ the demo requires `jupyter`, `numpy`, `matplotlib`, `cv2`, `json`, and `requests`.
+Once the model server is running, you can see how to use it by walking through [the demo notebook](demo.ipynb). _Note_ the demo requires `jupyter`, `numpy`, `matplotlib`, `opencv-python`, `json`, and `requests`.
 
 Run the following command from the model repo base folder, in a new terminal window (leaving the model server running in the other terminal window):
 
