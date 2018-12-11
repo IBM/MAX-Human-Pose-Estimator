@@ -174,50 +174,7 @@ You should see a JSON response like that below:
     },
     
     ...
-    
-    {
-      "human_id": 2,
-      "pose_lines": [
-        {
-          "line": [
-            139,
-            259,
-            72,
-            271
-          ]
-        },
-        
-        ...
-        
-        {
-          "line": [
-            167,
-            187,
-            178,
-            195
-          ]
-        }
-      ],
-      "body_parts": [
-        {
-          "part_id": 0,
-          "part_name": "Nose",
-          "score": "0.85493",
-          "x": 158,
-          "y": 197
-        },
-        
-        ...
-        
-        {
-          "part_id": 17,
-          "part_name": "LEar",
-          "score": "0.13491",
-          "x": 178,
-          "y": 195
-        }
-      ]
-    }
+
   ]
 }
 ```
