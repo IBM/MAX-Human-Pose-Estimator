@@ -134,30 +134,87 @@ You should see a JSON response like that below:
       "pose_lines": [
         {
           "line": [
-            110,
-            53,
-            91,
-            53
+            444,
+            269,
+            392,
+            269
           ]
         },
+        
+        ...
+        
         {
           "line": [
-            110,
-            53,
-            129,
-            50
+            439,
+            195,
+            464,
+            197
+          ]
+        }
+      ],
+      "body_parts": [
+        {
+          "part_id": 0,
+          "part_name": "Nose",
+          "score": "0.83899",
+          "x": 428,
+          "y": 205
+        },
+        
+        ...
+        
+        {
+          "part_id": 17,
+          "part_name": "LEar",
+          "score": "0.81776",
+          "x": 464,
+          "y": 197
+        }
+      ]
+    },
+    
+    ...
+    
+    {
+      "human_id": 2,
+      "pose_lines": [
+        {
+          "line": [
+            139,
+            259,
+            72,
+            271
           ]
         },
-        .
-        .
-        .
+        
+        ...
+        
         {
           "line": [
-            114,
-            35,
-            119,
-            32
+            167,
+            187,
+            178,
+            195
           ]
+        }
+      ],
+      "body_parts": [
+        {
+          "part_id": 0,
+          "part_name": "Nose",
+          "score": "0.85493",
+          "x": 158,
+          "y": 197
+        },
+        
+        ...
+        
+        {
+          "part_id": 17,
+          "part_name": "LEar",
+          "score": "0.13491",
+          "x": 178,
+          "y": 195
         }
       ]
     }
