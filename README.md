@@ -1,15 +1,15 @@
 # IBM Developer Model Asset Exchange: Human Pose Estimator
 
-The Human Pose Estimator model detects humans and their poses in a given image. The model first detects the humans in 
-the input image and then identifies the body parts, including nose, neck, eyes, shoulders, elbows, wrists, hips, knees, 
-and ankles. Next, each pair of associated body parts is connected by a "pose line"; for example, as the following image 
+The Human Pose Estimator model detects humans and their poses in a given image. The model first detects the humans in
+the input image and then identifies the body parts, including nose, neck, eyes, shoulders, elbows, wrists, hips, knees,
+and ankles. Next, each pair of associated body parts is connected by a "pose line"; for example, as the following image
 shows, a line may connect the left eye to the nose, while another may connect the nose to the neck.
 
 ![Pose Line Example](docs/pose-lines.png)
 
-Each pose line is represented by a list [x1, y1, x2, y2], where the first pair of coordinates (x1, y1) is the start 
-point of the line for one body part, while the second pair of coordinates (x2, y2) is the end point of the line for the 
-other associated body part. The pose lines are assembled into full body poses for each of the humans detected in the 
+Each pose line is represented by a list [x1, y1, x2, y2], where the first pair of coordinates (x1, y1) is the start
+point of the line for one body part, while the second pair of coordinates (x2, y2) is the end point of the line for the
+other associated body part. The pose lines are assembled into full body poses for each of the humans detected in the
 image.
 
 The model is based on the TF implementation of [OpenPose model](https://github.com/ildoonet/tf-pose-estimation).
@@ -18,8 +18,8 @@ as part of the [IBM Developer Model Asset Exchange](https://developer.ibm.com/ex
 
 ## Model Metadata
 | Domain | Application | Industry  | Framework | Training Data | Input Data Format |
-| ------------- | --------  | -------- | --------- | --------- | -------------- | 
-| Vision | Pose Estimation | General | TensorFlow | [COCO](http://cocodataset.org/#home) | Image(RGB) | 
+| ------------- | --------  | -------- | --------- | --------- | -------------- |
+| Vision | Pose Estimation | General | TensorFlow | [COCO](http://cocodataset.org/#home) | Image(RGB) |
 
 ## References
 
@@ -84,7 +84,7 @@ The model will be available internally at port `5000`, but can also be accessed 
 Clone this repository locally. In a terminal, run the following command:
 
 ```
-$ git clone https://github.com/IBM/MAX-Human-Pose-Estimator.git
+$ git clone https://github.com/IBM/MAX-Human-Pose-Estimator
 ```
 
 Change directory into the repository base folder:
@@ -93,7 +93,7 @@ Change directory into the repository base folder:
 $ cd MAX-Human-Pose-Estimator
 ```
 
-To build the docker image locally, run: 
+To build the docker image locally, run:
 
 ```
 $ docker build -t max-human-pose-estimator .
@@ -140,9 +140,9 @@ You should see a JSON response like that below:
             269
           ]
         },
-        
+
         ...
-        
+
         {
           "line": [
             439,
@@ -160,9 +160,9 @@ You should see a JSON response like that below:
           "x": 428,
           "y": 205
         },
-        
+
         ...
-        
+
         {
           "part_id": 17,
           "part_name": "LEar",
@@ -172,7 +172,7 @@ You should see a JSON response like that below:
         }
       ]
     },
-    
+
     ...
 
   ]
