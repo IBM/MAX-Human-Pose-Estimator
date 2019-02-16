@@ -18,6 +18,8 @@ RUN pip install -r requirements.txt
 
 COPY . /workspace
 
+RUN md5sum -c md5sums.txt # check file integrity
+
 RUN cd core/tf_pose/pafprocess/ && swig -python -c++ pafprocess.i && python setup.py build_ext --inplace
 
 EXPOSE 5000
