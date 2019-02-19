@@ -12,7 +12,7 @@ def test_swagger():
 
     json = r.json()
     assert 'swagger' in json
-    assert json.get('info') and json.get('info').get('title') == 'Model Asset Exchange Server'
+    assert json.get('info') and json.get('info').get('title') == 'MAX Human Pose Estimator'
 
 
 def test_metadata():
@@ -23,8 +23,8 @@ def test_metadata():
     assert r.status_code == 200
 
     metadata = r.json()
-    assert metadata['id'] == 'human-pose-estimator-tensorflow'
-    assert metadata['name'] == 'Openpose TensorFlow Model'
+    assert metadata['id'] == 'max human pose estimator'
+    assert metadata['name'] == 'MAX Human Pose Estimator TensorFlow Model'
     assert metadata['description'] == 'Openpose TensorFlow model trained on COCO data to detect human poses'
     assert metadata['license'] == 'Apache License 2.0'
 

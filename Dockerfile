@@ -1,4 +1,4 @@
-FROM codait/max-base:v1.0.0
+FROM codait/max-base:v1.1.0
 
 # Fill in these with a link to the bucket containing the model and the model file name
 ARG model_bucket=http://max-assets.s3-api.us-geo.objectstorage.softlayer.net/human-pose-estimator/1.0
@@ -17,6 +17,8 @@ COPY requirements.txt /workspace
 RUN pip install -r requirements.txt
 
 COPY . /workspace
+
+RUN md5sum -c md5sums.txt # check file integrity
 
 RUN cd core/tf_pose/pafprocess/ && swig -python -c++ pafprocess.i && python setup.py build_ext --inplace
 
