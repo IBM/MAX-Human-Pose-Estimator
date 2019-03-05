@@ -29,6 +29,17 @@ def test_metadata():
     assert metadata['license'] == 'Apache License 2.0'
 
 
+def _check_response(r):
+    assert r.status_code == 200
+    response = r.json()
+
+    assert response['status'] == 'ok'
+    assert len(response['predictions']) == 3
+    assert response['predictions'][0]['human_id'] == 0
+    assert len(response['predictions'][0]['pose_lines']) > 0
+    assert len(response['predictions'][0]['body_parts']) > 0
+
+
 def test_predict():
 
     model_endpoint = 'http://localhost:5000/model/predict'
@@ -39,15 +50,15 @@ def test_predict():
     with open(img1_path, 'rb') as file:
         file_form = {'file': (img1_path, file, 'image/jpeg')}
         r = requests.post(url=model_endpoint, files=file_form)
+    _check_response(r)
 
-    assert r.status_code == 200
-    response = r.json()
+    # Test PNG image
+    img1_path_png = 'tests/Pilots.png'
 
-    assert response['status'] == 'ok'
-    assert len(response['predictions']) == 3
-    assert response['predictions'][0]['human_id'] == 0
-    assert len(response['predictions'][0]['pose_lines']) > 0
-    assert len(response['predictions'][0]['body_parts']) > 0
+    with open(img1_path_png, 'rb') as file:
+        file_form = {'file': (img1_path_png, file, 'image/png')}
+        r = requests.post(url=model_endpoint, files=file_form)
+    _check_response(r)
 
     # Test by the image without faces
     img2_path = 'assets/IBM.jpeg'
