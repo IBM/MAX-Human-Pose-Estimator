@@ -43,22 +43,15 @@ def _check_response(r):
 def test_predict():
 
     model_endpoint = 'http://localhost:5000/model/predict'
+    formats = ['jpg', 'png', 'tiff']
+    img_path = 'tests/Pilots.{}'
 
-    # Test by the image with multiple faces
-    img1_path = 'assets/Pilots.jpg'
-
-    with open(img1_path, 'rb') as file:
-        file_form = {'file': (img1_path, file, 'image/jpeg')}
-        r = requests.post(url=model_endpoint, files=file_form)
-    _check_response(r)
-
-    # Test PNG image
-    img1_path_png = 'tests/Pilots.png'
-
-    with open(img1_path_png, 'rb') as file:
-        file_form = {'file': (img1_path_png, file, 'image/png')}
-        r = requests.post(url=model_endpoint, files=file_form)
-    _check_response(r)
+    for f in formats:
+        p = img_path.format(f)
+        with open(p, 'rb') as file:
+            file_form = {'file': (p, file, 'image/{}'.format(f))}
+            r = requests.post(url=model_endpoint, files=file_form)
+        _check_response(r)
 
     # Test by the image without faces
     img2_path = 'assets/IBM.jpeg'
