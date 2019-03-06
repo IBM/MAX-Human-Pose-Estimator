@@ -29,17 +29,7 @@ def test_metadata():
     assert metadata['license'] == 'Apache License 2.0'
 
 
-def test_predict():
-
-    model_endpoint = 'http://localhost:5000/model/predict'
-
-    # Test by the image with multiple faces
-    img1_path = 'assets/Pilots.jpg'
-
-    with open(img1_path, 'rb') as file:
-        file_form = {'file': (img1_path, file, 'image/jpeg')}
-        r = requests.post(url=model_endpoint, files=file_form)
-
+def _check_response(r):
     assert r.status_code == 200
     response = r.json()
 
@@ -48,6 +38,20 @@ def test_predict():
     assert response['predictions'][0]['human_id'] == 0
     assert len(response['predictions'][0]['pose_lines']) > 0
     assert len(response['predictions'][0]['body_parts']) > 0
+
+
+def test_predict():
+
+    model_endpoint = 'http://localhost:5000/model/predict'
+    formats = ['jpg', 'png', 'tiff']
+    img_path = 'tests/Pilots.{}'
+
+    for f in formats:
+        p = img_path.format(f)
+        with open(p, 'rb') as file:
+            file_form = {'file': (p, file, 'image/{}'.format(f))}
+            r = requests.post(url=model_endpoint, files=file_form)
+        _check_response(r)
 
     # Test by the image without faces
     img2_path = 'assets/IBM.jpeg'

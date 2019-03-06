@@ -1,5 +1,5 @@
 from core.model import ModelWrapper
-from flask_restplus import fields, abort
+from flask_restplus import fields
 from werkzeug.datastructures import FileStorage
 from maxfw.core import MAX_API, PredictAPI
 
@@ -58,11 +58,8 @@ class ModelPredictAPI(PredictAPI):
         """Make a prediction given input data"""
         result = {'status': 'error'}
         args = input_parser.parse_args()
-        try:
-            input_data = args['file'].read()
-            image = self.model_wrapper._read_image(input_data)
-        except OSError as e:
-            abort(400, "Please submit a valid image in PNG, Tiff or JPEG format")
+        input_data = args['file'].read()
+        image = self.model_wrapper._read_image(input_data)
 
         label_preds = self.model_wrapper.predict(image)
         result['predictions'] = label_preds

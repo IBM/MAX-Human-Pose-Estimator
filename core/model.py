@@ -1,9 +1,11 @@
+from maxfw.model import MAXModelWrapper
+
 import io
 import logging
 import time
 from PIL import Image
 import numpy as np
-from maxfw.model import MAXModelWrapper
+from flask_restplus import abort
 
 from core.tf_pose.estimator import TfPoseEstimator
 from config import DEFAULT_MODEL_PATH, DEFAULT_IMAGE_SIZE, MODEL_NAME
@@ -35,10 +37,16 @@ class ModelWrapper(MAXModelWrapper):
         logger.info("W = {}, H = {} ".format(self.w, self.h))
 
     def _read_image(self, image_data):
-        image = Image.open(io.BytesIO(image_data))
-        # Convert RGB to BGR for OpenCV.
-        image = np.array(image)[:, :, ::-1]
-        return image
+        try:
+            image = Image.open(io.BytesIO(image_data))
+            if image.mode is not 'RGB':
+               image = image.convert('RGB')
+            # Convert RGB to BGR for OpenCV.
+            image = np.array(image)[:, :, ::-1]
+            return image
+        except IOError as e:
+            logger.error(str(e))
+            abort(400, "Please submit a valid image in PNG, TIFF or JPEG format")
 
     def _predict(self, x):
         t = time.time()
