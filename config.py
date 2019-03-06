@@ -8,8 +8,8 @@ RESTPLUS_MASK_SWAGGER = False
 
 # API metadata
 API_TITLE = 'MAX Human Pose Estimator'
-API_DESC = 'Detect humans and their poses'
-API_VERSION = '0.1'
+API_DESC = 'Detect humans in an image and estimate the pose for each person.'
+API_VERSION = '1.1.0'
 
 # default model
 MODEL_NAME = 'MAX Human Pose Estimator'
