@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/IBM/MAX-Human-Pose-Estimator.svg?branch=master)](https://travis-ci.com/IBM/MAX-Human-Pose-Estimator) [![Website Status](https://img.shields.io/website/http/max-human-pose-estimator.max.us-south.containers.appdomain.cloud/swagger.json.svg?label=api+demo)](http://max-human-pose-estimator.max.us-south.containers.appdomain.cloud/)
+[![Build Status](https://travis-ci.org/IBM/MAX-Human-Pose-Estimator.svg?branch=master)](https://travis-ci.org/IBM/MAX-Human-Pose-Estimator) [![Website Status](https://img.shields.io/website/http/max-human-pose-estimator.max.us-south.containers.appdomain.cloud/swagger.json.svg?label=api+demo)](http://max-human-pose-estimator.max.us-south.containers.appdomain.cloud/)
 
 # IBM Developer Model Asset Exchange: Human Pose Estimator
 
