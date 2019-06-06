@@ -39,7 +39,7 @@ class ModelWrapper(MAXModelWrapper):
     def _read_image(self, image_data):
         try:
             image = Image.open(io.BytesIO(image_data))
-            if image.mode is not 'RGB':
+            if image.mode != 'RGB':
                image = image.convert('RGB')
             # Convert RGB to BGR for OpenCV.
             image = np.array(image)[:, :, ::-1]
