@@ -75,7 +75,7 @@ class SlidingWindow(object):
 				)
 			
 		else:
-			raise Error('Unsupported order of dimensions: ' + str(self.dimOrder))
+			raise ValueError('Unsupported order of dimensions: ' + str(self.dimOrder))
 		
 	def __str__(self):
 		return '(' + str(self.x) + ',' + str(self.y) + ',' + str(self.w) + ',' + str(self.h) + ')'
