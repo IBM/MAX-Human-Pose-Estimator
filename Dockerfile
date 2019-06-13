@@ -1,7 +1,7 @@
 FROM codait/max-base:v1.1.1
 
 # Fill in these with a link to the bucket containing the model and the model file name
-ARG model_bucket=http://max-assets.s3.us.cloud-object-storage.appdomain.cloud/human-pose-estimator/1.0
+ARG model_bucket=https://max-assets-dev.s3.us-south.cloud-object-storage.appdomain.cloud/max-human-pose-estimator/1.0
 ARG model_file=assets.tar.gz
 
 RUN apt-get update && apt-get install -y gcc swig libgtk2.0 \
