@@ -60,7 +60,7 @@ def test_predict():
 
     model_endpoint = 'http://localhost:5000/model/predict'
     formats = ['jpg', 'png', 'tiff']
-    img_path = 'tests/Pilots.{}'
+    img_path = 'samples/Pilots.{}'
 
     for f in formats:
         p = img_path.format(f)
@@ -70,7 +70,7 @@ def test_predict():
         _check_response(r)
 
     # Test by the image without faces
-    img2_path = 'assets/IBM.jpeg'
+    img2_path = 'samples/IBM.jpeg'
 
     with open(img2_path, 'rb') as file:
         file_form = {'file': (img2_path, file, 'image/jpeg')}

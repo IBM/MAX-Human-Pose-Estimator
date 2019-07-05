@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/IBM/MAX-Human-Pose-Estimator.svg?branch=master)](https://travis-ci.org/IBM/MAX-Human-Pose-Estimator) [![Website Status](https://img.shields.io/website/http/max-human-pose-estimator.max.us-south.containers.appdomain.cloud/swagger.json.svg?label=api+demo)](http://max-human-pose-estimator.max.us-south.containers.appdomain.cloud/)
 
+[<img src="docs/deploy-max-to-ibm-cloud-with-kubernetes-button.png" width="400px">](http://ibm.biz/max-to-ibm-cloud-tutorial)
+
 # IBM Developer Model Asset Exchange: Human Pose Estimator
 
 The Human Pose Estimator model detects humans and their poses in a given image. The model first detects the humans in
@@ -35,7 +37,7 @@ as part of the [IBM Developer Model Asset Exchange](https://developer.ibm.com/ex
 | This repository | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | [LICENSE](LICENSE) |
 | Model Weights | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | [LICENSE](https://github.com/ildoonet/tf-pose-estimation/blob/master/LICENSE) |
 | Model Code (3rd party) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | [LICENSE](https://github.com/ildoonet/tf-pose-estimation/blob/master/LICENSE) |
-| Test assets | Various | [Asset README](assets/README.md) |
+| Test Samples | Various | [Samples README](samples/README.md) |
 
 ## Pre-requisites:
 
@@ -115,14 +117,14 @@ $ docker run -it -p 5000:5000 max-human-pose-estimator
 ### 3. Use the Model
 
 The API server automatically generates an interactive Swagger documentation page. Go to `http://localhost:5000` to load it. From there you can explore the API and also create test requests.
-Use the `model/predict` endpoint to load a test image (you can use one of the test images from the `assets` folder) and get predicted labels for the image from the API.
+Use the `model/predict` endpoint to load a test image (you can use one of the test images from the `samples` folder) and get predicted labels for the image from the API.
 
 ![Swagger UI Screenshot](docs/swagger-screenshot.png)
 
 You can also test it on the command line, for example:
 
 ```
-$ curl -F "file=@assets/Pilots.jpg" -XPOST http://localhost:5000/model/predict
+$ curl -F "file=@samples/Pilots.jpg" -XPOST http://localhost:5000/model/predict
 ```
 
 You should see a JSON response like that below:

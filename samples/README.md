@@ -1,10 +1,4 @@
-# Asset Details
-
-## Model files
-
-Model files are from the [OpenPose model](https://github.com/ildoonet/tf-pose-estimation) where they are available under an [Apache 2.0 License](https://github.com/ildoonet/tf-pose-estimation/blob/master/LICENSE).
-
-_Note_ the model files are hosted on [IBM Cloud Object Storage](http://max-assets.s3-api.us-geo.objectstorage.softlayer.net/human-pose-estimator/1.0/assets.tar.gz).
+# Sample Details
 
 ## Test Images
 
