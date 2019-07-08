@@ -6,4 +6,4 @@ The following table details licenses applicable to certain test images. Any test
 
 | Asset | License | Link  |
 | ------------- | --------  | -------- |
-| [Pilots](Pilots.jpg) | Custom | [LICENSE](https://en.wikipedia.org/wiki/Apollo_11#/media/File:Apollo_11_Crew.jpg) |
+| [Pilots](Pilots.jpg) | Custom | [Public domain](https://en.wikipedia.org/wiki/Public_domain) |

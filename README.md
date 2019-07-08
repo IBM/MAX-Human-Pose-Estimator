@@ -185,7 +185,7 @@ You should see a JSON response like that below:
 
 ### 4. Run the Notebook
 
-Once the model server is running, you can see how to use it by walking through [the demo notebook](demo.ipynb). _Note_ the demo requires `jupyter`, `numpy`, `matplotlib`, `opencv-python`, `json`, and `requests`.
+Once the model server is running, you can see how to use it by walking through [the demo notebook](samples/demo.ipynb). _Note_ the demo requires `jupyter`, `numpy`, `matplotlib`, `opencv-python`, `json`, and `requests`.
 
 Run the following command from the model repo base folder, in a new terminal window (leaving the model server running in the other terminal window):
 
@@ -193,7 +193,7 @@ Run the following command from the model repo base folder, in a new terminal win
 $ jupyter notebook
 ```
 
-This will start the notebook server. You can open the simple demo notebook by clicking on `demo.ipynb`.
+This will start the notebook server. You can open the simple demo notebook by clicking on `samples/demo.ipynb`.
 
 ### 5. Development
 
