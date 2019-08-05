@@ -33,6 +33,7 @@ formatter = logging.Formatter('[%(asctime)s] [%(name)s] [%(levelname)s] %(messag
 ch.setFormatter(formatter)
 logger.addHandler(ch)
 
+
 class ModelWrapper(MAXModelWrapper):
 
     MODEL_META_DATA = {
@@ -56,7 +57,7 @@ class ModelWrapper(MAXModelWrapper):
         try:
             image = Image.open(io.BytesIO(image_data))
             if image.mode != 'RGB':
-               image = image.convert('RGB')
+                image = image.convert('RGB')
             # Convert RGB to BGR for OpenCV.
             image = np.array(image)[:, :, ::-1]
             return image
