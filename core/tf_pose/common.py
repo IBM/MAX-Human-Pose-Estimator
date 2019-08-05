@@ -1,5 +1,4 @@
 from enum import Enum
-
 import tensorflow as tf
 import cv2
 
@@ -94,6 +93,7 @@ class MPIIPart(Enum):
             pose_2d_mpii.append((human.body_parts[coco.value].x, human.body_parts[coco.value].y))
             visibilty.append(True)
         return pose_2d_mpii, visibilty
+
 
 CocoPairs = [
     (1, 2), (1, 5), (2, 3), (3, 4), (5, 6), (6, 7), (1, 8), (8, 9), (9, 10), (1, 11),

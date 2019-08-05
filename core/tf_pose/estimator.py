@@ -23,7 +23,8 @@ try:
     from core.tf_pose.pafprocess import pafprocess
 except ModuleNotFoundError as e:
     print(e)
-    print('you need to build c++ library for pafprocess. See : https://github.com/ildoonet/tf-pose-estimation/tree/master/tf_pose/pafprocess')
+    print('you need to build c++ library for pafprocess.')
+    print('See: https://github.com/ildoonet/tf-pose-estimation/tree/master/tf_pose/pafprocess')
     exit(-1)
 
 
@@ -190,15 +191,14 @@ class Human:
         y2 = max([part[1] for part in part_coords])
 
         # # ------ Adjust heuristically +
-        # if face points are detcted, adjust y value
+        # if face points are detected, adjust y value
 
         is_nose, part_nose = _include_part(parts, _NOSE)
         is_neck, part_neck = _include_part(parts, _NECK)
-        torso_height = 0
+
         if is_nose and is_neck:
             y -= (part_neck.y * img_h - y) * 0.8
-            torso_height = max(0, (part_neck.y - part_nose.y) * img_h * 2.5)
-        #
+
         # # by using shoulder position, adjust width
         is_rshoulder, part_rshoulder = _include_part(parts, _RSHOULDER)
         is_lshoulder, part_lshoulder = _include_part(parts, _LSHOULDER)
@@ -432,7 +432,10 @@ class TfPoseEstimator:
         return results
 
     def _get_scaled_img(self, npimg, scale):
-        get_base_scale = lambda s, w, h: max(self.target_size[0] / float(h), self.target_size[1] / float(w)) * s
+
+        def get_base_scale(s, w, h):
+            return max(self.target_size[0] / float(h), self.target_size[1] / float(w)) * s
+
         img_h, img_w = npimg.shape[:2]
 
         if scale is None:
@@ -576,6 +579,6 @@ if __name__ == '__main__':
 
     t = time.time()
     humans = PoseEstimator.estimate_paf(data['peaks'], data['heatMat'], data['pafMat'])
-    dt = time.time() - t;
+    dt = time.time() - t
     t = time.time()
     logger.info('elapsed #humans=%d time=%.8f' % (len(humans), dt))

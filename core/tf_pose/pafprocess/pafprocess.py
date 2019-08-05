@@ -48,17 +48,18 @@ try:
 except ImportError:
     import __builtin__
 
+
 def _swig_setattr_nondynamic(self, class_type, name, value, static=1):
-    if (name == "thisown"):
+    if name == "thisown":
         return self.this.own(value)
-    if (name == "this"):
+    if name == "this":
         if type(value).__name__ == 'SwigPyObject':
             self.__dict__[name] = value
             return
     method = class_type.__swig_setmethods__.get(name, None)
     if method:
         return method(self, value)
-    if (not static):
+    if not static:
         if _newclass:
             object.__setattr__(self, name, value)
         else:
@@ -72,7 +73,7 @@ def _swig_setattr(self, class_type, name, value):
 
 
 def _swig_getattr(self, class_type, name):
-    if (name == "thisown"):
+    if name == "thisown":
         return self.this.own()
     method = class_type.__swig_getmethods__.get(name, None)
     if method:
@@ -87,6 +88,7 @@ def _swig_repr(self):
         strthis = ""
     return "<%s.%s; %s >" % (self.__class__.__module__, self.__class__.__name__, strthis,)
 
+
 try:
     _object = object
     _newclass = 1
@@ -95,11 +97,18 @@ except __builtin__.Exception:
         pass
     _newclass = 0
 
+
 class Peak(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, Peak, name, value)
+
+    def __setattr__(self, name, value):
+        return _swig_setattr(self, Peak, name, value)
+
     __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, Peak, name)
+
+    def __getattr__(self, name):
+        return _swig_getattr(self, Peak, name)
+
     __repr__ = _swig_repr
     __swig_setmethods__["x"] = _pafprocess.Peak_x_set
     __swig_getmethods__["x"] = _pafprocess.Peak_x_get
@@ -125,7 +134,11 @@ class Peak(_object):
         except __builtin__.Exception:
             self.this = this
     __swig_destroy__ = _pafprocess.delete_Peak
-    __del__ = lambda self: None
+
+    def __del__(self):
+        return None
+
+
 Peak_swigregister = _pafprocess.Peak_swigregister
 Peak_swigregister(Peak)
 cvar = _pafprocess.cvar
@@ -140,11 +153,18 @@ COCOPAIRS_SIZE = cvar.COCOPAIRS_SIZE
 COCOPAIRS_NET = cvar.COCOPAIRS_NET
 COCOPAIRS = cvar.COCOPAIRS
 
+
 class VectorXY(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, VectorXY, name, value)
+
+    def __setattr__(self, name, value):
+        return _swig_setattr(self, VectorXY, name, value)
+
     __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, VectorXY, name)
+
+    def __getattr__(self, name):
+        return _swig_getattr(self, VectorXY, name)
+
     __repr__ = _swig_repr
     __swig_setmethods__["x"] = _pafprocess.VectorXY_x_set
     __swig_getmethods__["x"] = _pafprocess.VectorXY_x_get
@@ -162,15 +182,26 @@ class VectorXY(_object):
         except __builtin__.Exception:
             self.this = this
     __swig_destroy__ = _pafprocess.delete_VectorXY
-    __del__ = lambda self: None
+
+    def __del__(self):
+        return None
+
+
 VectorXY_swigregister = _pafprocess.VectorXY_swigregister
 VectorXY_swigregister(VectorXY)
 
+
 class ConnectionCandidate(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, ConnectionCandidate, name, value)
+
+    def __setattr__(self, name, value):
+        return _swig_setattr(self, ConnectionCandidate, name, value)
+
     __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, ConnectionCandidate, name)
+
+    def __getattr__(self, name):
+        return _swig_getattr(self, ConnectionCandidate, name)
+
     __repr__ = _swig_repr
     __swig_setmethods__["idx1"] = _pafprocess.ConnectionCandidate_idx1_set
     __swig_getmethods__["idx1"] = _pafprocess.ConnectionCandidate_idx1_get
@@ -196,15 +227,25 @@ class ConnectionCandidate(_object):
         except __builtin__.Exception:
             self.this = this
     __swig_destroy__ = _pafprocess.delete_ConnectionCandidate
-    __del__ = lambda self: None
+
+    def __del__(self):
+        return None
+
+
 ConnectionCandidate_swigregister = _pafprocess.ConnectionCandidate_swigregister
 ConnectionCandidate_swigregister(ConnectionCandidate)
 
+
 class Connection(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, Connection, name, value)
+
+    def __setattr__(self, name, value):
+        return _swig_setattr(self, Connection, name, value)
+
     __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, Connection, name)
+
+    def __getattr__(self, name):
+        return _swig_getattr(self, Connection, name)
     __repr__ = _swig_repr
     __swig_setmethods__["cid1"] = _pafprocess.Connection_cid1_set
     __swig_getmethods__["cid1"] = _pafprocess.Connection_cid1_get
@@ -234,38 +275,46 @@ class Connection(_object):
         except __builtin__.Exception:
             self.this = this
     __swig_destroy__ = _pafprocess.delete_Connection
-    __del__ = lambda self: None
+
+    def __del__(self):
+        return None
+
+
 Connection_swigregister = _pafprocess.Connection_swigregister
 Connection_swigregister(Connection)
 
 
 def process_paf(p1, h1, f1):
     return _pafprocess.process_paf(p1, h1, f1)
-process_paf = _pafprocess.process_paf
+process_paf = _pafprocess.process_paf  # noqa
+
 
 def get_num_humans():
     return _pafprocess.get_num_humans()
-get_num_humans = _pafprocess.get_num_humans
+get_num_humans = _pafprocess.get_num_humans  # noqa
+
 
 def get_part_cid(human_id, part_id):
     return _pafprocess.get_part_cid(human_id, part_id)
-get_part_cid = _pafprocess.get_part_cid
+get_part_cid = _pafprocess.get_part_cid  # noqa
+
 
 def get_score(human_id):
     return _pafprocess.get_score(human_id)
-get_score = _pafprocess.get_score
+get_score = _pafprocess.get_score  # noqa
+
 
 def get_part_x(cid):
     return _pafprocess.get_part_x(cid)
-get_part_x = _pafprocess.get_part_x
+get_part_x = _pafprocess.get_part_x  # noqa
+
 
 def get_part_y(cid):
     return _pafprocess.get_part_y(cid)
-get_part_y = _pafprocess.get_part_y
+get_part_y = _pafprocess.get_part_y  # noqa
+
 
 def get_part_score(cid):
     return _pafprocess.get_part_score(cid)
-get_part_score = _pafprocess.get_part_score
+get_part_score = _pafprocess.get_part_score  # noqa
 # This file is compatible with both classic and new-style classes.
-
-

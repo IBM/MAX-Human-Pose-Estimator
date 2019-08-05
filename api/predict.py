@@ -63,6 +63,7 @@ predict_response = MAX_API.model('ModelPredictResponse', {
     'predictions': fields.List(fields.Nested(label_prediction),
                                description='Predicted labels and probabilities')})
 
+
 class ModelPredictAPI(PredictAPI):
 
     model_wrapper = ModelWrapper()

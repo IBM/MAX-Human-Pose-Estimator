@@ -1,1 +1,0 @@
-5d142b6975535b2a1fa809492c20f35c assets/human-pose-estimator-tensorflow.pb

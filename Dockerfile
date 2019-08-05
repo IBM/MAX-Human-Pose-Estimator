@@ -32,7 +32,7 @@ RUN pip install -r requirements.txt
 COPY . /workspace
 
 # check file integrity
-RUN md5sum -c md5sums.txt
+RUN sha512sum -c sha512sums.txt
 
 RUN cd core/tf_pose/pafprocess/ && swig -python -c++ pafprocess.i && python setup.py build_ext --inplace
 
