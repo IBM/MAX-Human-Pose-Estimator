@@ -207,3 +207,7 @@ To run the Flask API app in debug mode, edit `config.py` to set `DEBUG = True` u
 ### 6. Cleanup
 
 To stop the Docker container, type `CTRL` + `C` in your terminal.
+
+## Resources and Contributions
+   
+If you are interested in contributing to the Model Asset Exchange project or have any queries, please follow the instructions [here](https://github.com/CODAIT/max-central-repo).
