@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/IBM/MAX-Human-Pose-Estimator.svg?branch=master)](https://travis-ci.org/IBM/MAX-Human-Pose-Estimator) [![Website Status](https://img.shields.io/website/http/max-human-pose-estimator.max.us-south.containers.appdomain.cloud/swagger.json.svg?label=api+demo)](http://max-human-pose-estimator.max.us-south.containers.appdomain.cloud/)
+[![Build Status](https://travis-ci.org/IBM/MAX-Human-Pose-Estimator.svg?branch=master)](https://travis-ci.org/IBM/MAX-Human-Pose-Estimator) [![Website Status](https://img.shields.io/website/http/max-human-pose-estimator.codait-prod-41208c73af8fca213512856c7a09db52-0000.us-east.containers.appdomain.cloud/swagger.json.svg?label=api+demo)](http://max-human-pose-estimator.codait-prod-41208c73af8fca213512856c7a09db52-0000.us-east.containers.appdomain.cloud)
 
 [<img src="docs/deploy-max-to-ibm-cloud-with-kubernetes-button.png" width="400px">](http://ibm.biz/max-to-ibm-cloud-tutorial)
 
