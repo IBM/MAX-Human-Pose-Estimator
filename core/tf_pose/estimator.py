@@ -570,10 +570,10 @@ class TfPoseEstimator:
 
 
 if __name__ == '__main__':
-    import pickle
+    import pickle  # nosec - B403:blacklist - we are using pickle on a known file
 
     f = open('./etcs/heatpaf1.pkl', 'rb')
-    data = pickle.load(f)
+    data = pickle.load(f)  # nosec - B301:blacklist - this is a known file
     logger.info('size={}'.format(data['heatMat'].shape))
     f.close()
 

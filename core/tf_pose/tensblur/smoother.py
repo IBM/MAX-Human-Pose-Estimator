@@ -46,7 +46,9 @@ class Smoother(object):
         return '%s_%d' % (prefix, ident)
 
     def feed(self, *args):
-        assert len(args) != 0
+        if len(args) == 0:
+            raise ValueError("len(args) must not be zero")
+
         self.terminals = []
         for fed_layer in args:
             if isinstance(fed_layer, str):
