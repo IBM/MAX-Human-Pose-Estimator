@@ -39,7 +39,7 @@ class ModelWrapper(MAXModelWrapper):
     MODEL_META_DATA = {
         'id': '{}'.format(MODEL_NAME.lower()),
         'name': '{} TensorFlow Model'.format(MODEL_NAME),
-        'description': 'Openpose TensorFlow model trained on COCO data to detect human poses',
+        'description': 'TensorFlow model trained on COCO data to detect human poses',
         'type': 'Human pose estimation',
         'license': 'Apache License 2.0',
         'source': 'https://developer.ibm.com/exchanges/models/all/max-human-pose-estimator/'

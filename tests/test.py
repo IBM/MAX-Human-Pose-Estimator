@@ -41,7 +41,7 @@ def test_metadata():
     metadata = r.json()
     assert metadata['id'] == 'max human pose estimator'
     assert metadata['name'] == 'MAX Human Pose Estimator TensorFlow Model'
-    assert metadata['description'] == 'Openpose TensorFlow model trained on COCO data to detect human poses'
+    assert metadata['description'] == 'TensorFlow model trained on COCO data to detect human poses'
     assert metadata['license'] == 'Apache License 2.0'
 
 
