@@ -35,7 +35,7 @@ as part of the [IBM Developer Model Asset Exchange](https://developer.ibm.com/ex
 | Component | License | Link  |
 | ------------- | --------  | -------- |
 | This repository | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | [LICENSE](LICENSE) |
-| Model Weights (mobilenet only) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | [LICENSE](https://github.com/ildoonet/tf-pose-estimation/blob/master/LICENSE) |
+| Model Weights (MobileNet only) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | [LICENSE](https://github.com/ildoonet/tf-pose-estimation/blob/master/LICENSE) |
 | Model Code (3rd party) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | [LICENSE](https://github.com/ildoonet/tf-pose-estimation/blob/master/LICENSE) |
 | Test Samples | Various | [Samples README](samples/README.md) |
 
