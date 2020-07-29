@@ -16,7 +16,7 @@ point of the line for one body part, while the second pair of coordinates (x2, y
 other associated body part. The pose lines are assembled into full body poses for each of the humans detected in the
 image.
 
-The model is based on the TF implementation of [OpenPose model](https://github.com/ildoonet/tf-pose-estimation).
+The model is based on the open source [TF implementation of OpenPose model](https://github.com/ildoonet/tf-pose-estimation).
 The code in this repository deploys the model as a web service in a Docker container. This repository was developed
 as part of the [IBM Developer Model Asset Exchange](https://developer.ibm.com/exchanges/models/).
 
@@ -35,7 +35,7 @@ as part of the [IBM Developer Model Asset Exchange](https://developer.ibm.com/ex
 | Component | License | Link  |
 | ------------- | --------  | -------- |
 | This repository | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | [LICENSE](LICENSE) |
-| Model Weights | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | [LICENSE](https://github.com/ildoonet/tf-pose-estimation/blob/master/LICENSE) |
+| Model Weights (MobileNet only) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | [LICENSE](https://github.com/ildoonet/tf-pose-estimation/blob/master/LICENSE) |
 | Model Code (3rd party) | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | [LICENSE](https://github.com/ildoonet/tf-pose-estimation/blob/master/LICENSE) |
 | Test Samples | Various | [Samples README](samples/README.md) |
 
