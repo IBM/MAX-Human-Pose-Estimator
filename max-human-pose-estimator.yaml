@@ -28,6 +28,6 @@ spec:
     spec:
       containers:
       - name: max-human-pose-estimator
-        image: codait/max-human-pose-estimator:latest
+        image: quay.io/codait/max-human-pose-estimator:latest
         ports:
         - containerPort: 5000
