@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-FROM codait/max-base:v1.3.2
+FROM quay.io/codait/max-base:v1.3.2
 
 # Fill in these with a link to the bucket containing the model and the model file name
 ARG model_bucket=https://max-cdn.cdn.appdomain.cloud/max-human-pose-estimator/1.0.0
