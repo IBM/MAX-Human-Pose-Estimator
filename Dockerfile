@@ -27,7 +27,7 @@ RUN wget -nv --show-progress --progress=bar:force:noscroll ${model_bucket}/${mod
   tar -x -C assets/ -f assets/${model_file} -v && rm assets/${model_file}
 
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN sudo pip install -r requirements.txt
 
 COPY . .
 
