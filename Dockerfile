@@ -34,7 +34,7 @@ COPY . .
 # check file integrity
 RUN sha512sum -c sha512sums.txt
 
-RUN cd core/tf_pose/pafprocess/ && swig -python -c++ pafprocess.i && python setup.py build_ext --inplace
+RUN cd core/tf_pose/pafprocess/ && sudo swig -python -c++ pafprocess.i && sudo python setup.py build_ext --inplace
 
 EXPOSE 5000
 
