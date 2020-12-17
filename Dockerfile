@@ -27,14 +27,14 @@ RUN wget -nv --show-progress --progress=bar:force:noscroll ${model_bucket}/${mod
   tar -x -C assets/ -f assets/${model_file} -v && rm assets/${model_file}
 
 COPY requirements.txt .
-RUN sudo pip install -r requirements.txt
+RUN pip install -r requirements.txt
 
 COPY . .
 
 # check file integrity
 RUN sha512sum -c sha512sums.txt
 
-RUN cd core/tf_pose/pafprocess/ && sudo swig -python -c++ pafprocess.i && sudo python setup.py build_ext --inplace
+RUN cd core/tf_pose/pafprocess/ && sudo swig -python -c++ pafprocess.i && sudo /opt/conda/bin/python setup.py build_ext --inplace
 
 EXPOSE 5000
 
