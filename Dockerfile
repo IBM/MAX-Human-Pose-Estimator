@@ -23,7 +23,7 @@ ARG model_file=assets.tar.gz
 RUN sudo apt-get update && sudo apt-get install -y gcc swig libgtk2.0 \
                         && sudo apt-get install --reinstall -y build-essential && sudo rm -rf /var/lib/apt/lists/*
 
-RUN wget -nv --show-progress --progress=bar:force:noscroll ${model_bucket}/${model_file} --output-document=/workspace/assets/${model_file} && \
+RUN wget -nv --show-progress --progress=bar:force:noscroll ${model_bucket}/${model_file} --output-document=assets/${model_file} && \
   tar -x -C assets/ -f assets/${model_file} -v && rm assets/${model_file}
 
 COPY requirements.txt .
