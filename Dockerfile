@@ -14,22 +14,22 @@
 # limitations under the License.
 #
 
-FROM quay.io/codait/max-base:v1.3.2
+FROM quay.io/codait/max-base:v1.4.0
 
 # Fill in these with a link to the bucket containing the model and the model file name
 ARG model_bucket=https://max-cdn.cdn.appdomain.cloud/max-human-pose-estimator/1.0.0
 ARG model_file=assets.tar.gz
 
-RUN apt-get update && apt-get install -y gcc swig libgtk2.0 \
-                   && apt-get install --reinstall -y build-essential && rm -rf /var/lib/apt/lists/*
+RUN sudo apt-get update && sudo apt-get install -y gcc swig libgtk2.0 \
+                        && sudo apt-get install --reinstall -y build-essential && sudo rm -rf /var/lib/apt/lists/*
 
 RUN wget -nv --show-progress --progress=bar:force:noscroll ${model_bucket}/${model_file} --output-document=/workspace/assets/${model_file} && \
   tar -x -C assets/ -f assets/${model_file} -v && rm assets/${model_file}
 
-COPY requirements.txt /workspace
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY . /workspace
+COPY . .
 
 # check file integrity
 RUN sha512sum -c sha512sums.txt
