@@ -17,7 +17,7 @@
 FROM quay.io/codait/max-base:v1.4.0
 
 # Fill in these with a link to the bucket containing the model and the model file name
-ARG model_bucket=https://max-cdn.cdn.appdomain.cloud/max-human-pose-estimator/1.0.0
+ARG model_bucket=https://codait-cos-max.s3.us.cloud-object-storage.appdomain.cloud/max-human-pose-estimator/1.0.0
 ARG model_file=assets.tar.gz
 
 RUN sudo apt-get update && sudo apt-get install -y gcc swig libgtk2.0 \
