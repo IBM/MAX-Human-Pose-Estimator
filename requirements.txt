@@ -12,4 +12,4 @@ slidingwindow==0.0.13
 tensorflow==1.15.4
 tqdm==4.31.1
 git+https://github.com/ppwwyyxx/tensorpack.git
-numpy==1.17.0
+numpy==1.22.0
