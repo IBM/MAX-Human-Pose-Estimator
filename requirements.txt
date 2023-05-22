@@ -5,7 +5,7 @@ matplotlib==3.0.3
 opencv-python==4.1.0.25
 protobuf==3.7.1
 psutil==5.6.6
-requests==2.21.0
+requests==2.31.0
 scikit-image==0.15.0
 scipy==1.2.1
 slidingwindow==0.0.13
